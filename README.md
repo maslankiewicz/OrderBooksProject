@@ -8,7 +8,7 @@ OrderBookProject/ ├── OrderBookProject/ # Core application logic │ ├�
 
 ## 🧾 Input & Output Formats
 
-### ➤ Input: `ticks.raw` (binary)
+ ➤ Input: `ticks.raw` (binary)
 
 Each record contains:
 - `SourceTime` (Int64)
@@ -20,9 +20,9 @@ Each record contains:
 
 > Format is big-endian binary.
 
-### ➤ Output: `output.csv` (semicolon-separated)
+ ➤ Output: `output.csv` (semicolon-separated)
 
-🛠️ Build & Run
+## 🛠️ Build & Run
 ▶ Requirements
 .NET 6 SDK
 
@@ -39,12 +39,12 @@ Press F5 to build and run
 bash
 Copy
 Edit
-# Navigate to the solution root
+Navigate to the solution root
 cd OrderBookProject
 
-# Build the project
+Build the project
 dotnet build
 
-# Run the program (outputs to Resources/output.csv)
+Run the program (outputs to Resources/output.csv)
 dotnet run --project OrderBookProject
 ✔️ The output file will be written to: OrderBookProject/Resources/output.csv
