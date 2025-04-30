@@ -1,7 +1,6 @@
 # OrderBookProject
 
 This project builds a limit order book from raw market data (`ticks.raw`) and outputs current best bid and ask (`B0`, `A0`) metrics in a CSV format.
-## 📁 Project Structure
 
 ## 📦 Project Structure
 
@@ -20,6 +19,8 @@ Each record contains:
 - `Qty` (Int32)
 
 > Format is big-endian binary.
+
+### ➤ Output: `output.csv` (semicolon-separated)
 
 🛠️ Build & Run
 ▶ Requirements
