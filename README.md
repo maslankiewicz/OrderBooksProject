@@ -48,3 +48,19 @@ dotnet build
 Run the program (outputs to Resources/output.csv)
 dotnet run --project OrderBookProject
 ✔️ The output file will be written to: OrderBookProject/Resources/output.csv
+
+# 🧪 Uruchamianie testów jednostkowych
+
+Testy znajdują się w projekcie `OrderBookTestProject` i są oparte na bibliotece **NUnit**.
+
+## ✅ Wymagania
+
+Aby uruchomić testy, upewnij się, że:
+
+1. Masz zainstalowane pakiety NuGet:
+
+   - `NUnit`
+   - `NUnit3TestAdapter`
+   - `Microsoft.NET.Test.Sdk`
+   
+2. Projekt testowy (OrderBookTestProject) ma referencję do projektu głównego (OrderBookProject)
