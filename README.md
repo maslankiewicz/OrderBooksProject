@@ -4,7 +4,25 @@ This project builds a limit order book from raw market data (`ticks.raw`) and ou
 
 ## 📦 Project Structure
 
-OrderBookProject/ ├── OrderBookProject/ # Core application logic │ ├── Models/ # Order data model │ ├── OrderBooks/ # Order book logic │ ├── Utilities/ # File I/O helpers │ └── Program.cs # Entry point │ ├── OrderBookTestProject/ # NUnit test project │ └── OrderBookTests.cs │ ├── Resources/ # Input/output files │ ├── ticks.raw # Raw binary tick input │ ├── ticks_sample.csv # Decoded sample input (CSV) │ ├── ticks_result_sample.csv # Expected result (CSV) │ └── output.csv # Program output │ ├── .github/workflows/ # GitHub Actions CI (optional) │ └── dotnet.yml │ ├── OrderBookProject.sln # Visual Studio solution └── README.md # This file
+OrderBookProject/
+├── OrderBookProject/              
+│   ├── Models/                    # Order model
+│   ├── OrderBooks/                # OrderBook logic
+│   ├── Utilities/                 # File reading/writing utilities
+│       ├── FileUtility.cs
+│   └── Program.cs                 
+│
+├── OrderBookTestProject/          
+│   ├── OrderBookTests.cs
+│   ├── OrderBookTestsFullMessage.cs
+│   └── OrderBookCornerCaseTests.cs
+│
+├── Resources/                     # Input/output files
+│   ├── ticks.raw                  # Binary input
+│   ├── ticks_sample.csv           # Sample decoded input
+│   ├── ticks_result_sample.csv    # Sample output for comparison
+│   └── output.csv                 # Generated outpu
+├── OrderBookProject.sln           # Visual Studio solution file
 
 ## 🧾 Input & Output Formats
 
