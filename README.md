@@ -1,6 +1,6 @@
 # OrderBookProject
 
-This project builds a limit order book from raw market data (`ticks.raw`) and outputs current best bid and ask (`B0`, `A0`) metrics in a CSV format.
+This project builds a limit order book from raw market data (`ticks.raw`).
 
 ## 📦 Project Structure
 
