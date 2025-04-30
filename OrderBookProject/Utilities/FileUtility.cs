@@ -8,6 +8,8 @@ namespace OrderBookProject.Utilities
 {
     public static class FileUtility
     {
+        // Reads a binary file (big-endian) and parses each tick into an Order.
+        // Assumes full record is always available (no partial reads).
         public static List<Order> ReadOrdersFromFile(string filePath)
         {
             var orders = new List<Order>();
@@ -31,7 +33,7 @@ namespace OrderBookProject.Utilities
             }
             return orders;
         }
-
+        // Processes and outputs orders with computed B0/A0 state per row.
         public static void WriteOrdersToFile(string filePath, List<Order> orders, OrderBook orderBook)
         {
             using (var writer = new StreamWriter(filePath, false, new System.Text.UTF8Encoding(true)))
@@ -63,7 +65,7 @@ namespace OrderBookProject.Utilities
                 }
             }
         }
-
+        // This function is added for testing to test the example input file with output sample
         public static void DecodeRawToCsv(string rawFilePath, string outputCsvPath)
         {
             var orders = ReadOrdersFromFile(rawFilePath);
@@ -77,7 +79,6 @@ namespace OrderBookProject.Utilities
                     writer.WriteLine($"{order.SourceTime};{order.Side};{order.Action};{order.OrderId};{order.Price};{order.Qty}");
                 }
             }
-
             Console.WriteLine($"Decoded raw binary input to: {outputCsvPath}");
         }
 
