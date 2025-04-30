@@ -1,0 +1,4 @@
+C:\Users\User\source\repos\OrderBook\OrderBook\obj\Debug\netcoreapp3.1\OrderBookProject.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\OrderBook\OrderBook\obj\Debug\netcoreapp3.1\OrderBookProject.AssemblyInfo.cs
+C:\Users\User\source\repos\OrderBook\OrderBook\obj\Debug\netcoreapp3.1\OrderBookProject.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\OrderBook\OrderBook\obj\Debug\netcoreapp3.1\OrderBookProject.csprojAssemblyReference.cache
