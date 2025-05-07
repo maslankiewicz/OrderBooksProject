@@ -12,8 +12,8 @@ namespace OrderBookProject
     {
         static void Main(string[] args)
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string resourceDir = Path.Combine(baseDir, "Resources");
+            string projectRoot = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+            string resourceDir = Path.Combine(projectRoot, "Resources");
 
             Directory.CreateDirectory(resourceDir);
 
@@ -42,7 +42,7 @@ namespace OrderBookProject
                 long tickTimeMicroseconds = stopwatch.ElapsedTicks * 1_000_000 / Stopwatch.Frequency;
                 totalMicroseconds += tickTimeMicroseconds;
 
-                Console.WriteLine($"Tick {i + 1}/{orders.Count} processed in {tickTimeMicroseconds} µs");
+                //Console.WriteLine($"Tick {i + 1}/{orders.Count} processed in {tickTimeMicroseconds} µs");
             }
 
             double avgPerTick = totalMicroseconds / (double)orders.Count;

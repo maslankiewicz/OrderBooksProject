@@ -48,15 +48,16 @@ namespace OrderBookProject.Utilities
                     var (bPrice, bQty, bCount) = orderBook.GetBestBid();
                     var (aPrice, aQty, aCount) = orderBook.GetBestAsk();
 
-                    // Only blank out values if the count is zero (i.e. no orders at all)
-                    string bPriceStr = bCount == 0 ? "" : bPrice.ToString();
-                    string bQtyStr = bCount == 0 ? "" : bQty.ToString();
-                    string bCountStr = bCount == 0 ? "" : bCount.ToString();
+                    // sprawdzenie action
+                    bool clearAction = order.Action == 'F' || order.Action == 'Y';
 
-                    string aPriceStr = aCount == 0 ? "" : aPrice.ToString();
-                    string aQtyStr = aCount == 0 ? "" : aQty.ToString();
-                    string aCountStr = aCount == 0 ? "" : aCount.ToString();
+                    string bPriceStr = (clearAction || bCount == 0) ? "" : bPrice.ToString();
+                    string bQtyStr = (clearAction || bCount == 0) ? "" : bQty.ToString();
+                    string bCountStr = (clearAction || bCount == 0) ? "" : bCount.ToString();
 
+                    string aPriceStr = (clearAction || aCount == 0) ? "" : aPrice.ToString();
+                    string aQtyStr = (clearAction || aCount == 0) ? "" : aQty.ToString();
+                    string aCountStr = (clearAction || aCount == 0) ? "" : aCount.ToString();
                     string sideStr = order.Side.HasValue ? order.Side.ToString() : "";
                     string actionStr = order.Action.HasValue ? order.Action.ToString() : "";
 
