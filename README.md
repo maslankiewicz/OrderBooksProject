@@ -1,14 +1,32 @@
 # OrderBookProject
 
-This project builds a limit order book from raw market data (`ticks.raw`) and outputs current best bid and ask (`B0`, `A0`) metrics in a CSV format.
+This project builds a limit order book from raw market data (`ticks.raw`).
 
 ## 📦 Project Structure
 
-OrderBookProject/ ├── OrderBookProject/ # Core application logic │ ├── Models/ # Order data model │ ├── OrderBooks/ # Order book logic │ ├── Utilities/ # File I/O helpers │ └── Program.cs # Entry point │ ├── OrderBookTestProject/ # NUnit test project │ └── OrderBookTests.cs │ ├── Resources/ # Input/output files │ ├── ticks.raw # Raw binary tick input │ ├── ticks_sample.csv # Decoded sample input (CSV) │ ├── ticks_result_sample.csv # Expected result (CSV) │ └── output.csv # Program output │ ├── .github/workflows/ # GitHub Actions CI (optional) │ └── dotnet.yml │ ├── OrderBookProject.sln # Visual Studio solution └── README.md # This file
+OrderBookProject/
+├── OrderBookProject/              
+│   ├── Models/                    # Order model
+│   ├── OrderBooks/                # OrderBook logic
+│   ├── Utilities/                 # File reading/writing utilities
+│       ├── FileUtility.cs
+│   └── Program.cs                 
+│
+├── OrderBookTestProject/          
+│   ├── OrderBookTests.cs
+│   ├── OrderBookTestsFullMessage.cs
+│   └── OrderBookCornerCaseTests.cs
+│
+├── Resources/                     # Input/output files
+│   ├── ticks.raw                  # Binary input
+│   ├── ticks_sample.csv           # Sample decoded input
+│   ├── ticks_result_sample.csv    # Sample output for comparison
+│   └── output.csv                 # Generated outpu
+├── OrderBookProject.sln           # Visual Studio solution file
 
 ## 🧾 Input & Output Formats
 
-### ➤ Input: `ticks.raw` (binary)
+ ➤ Input: `ticks.raw` (binary)
 
 Each record contains:
 - `SourceTime` (Int64)
@@ -20,9 +38,9 @@ Each record contains:
 
 > Format is big-endian binary.
 
-### ➤ Output: `output.csv` (semicolon-separated)
+ ➤ Output: `output.csv` (semicolon-separated)
 
-🛠️ Build & Run
+## 🛠️ Build & Run
 ▶ Requirements
 .NET 6 SDK
 
@@ -39,12 +57,28 @@ Press F5 to build and run
 bash
 Copy
 Edit
-# Navigate to the solution root
+Navigate to the solution root
 cd OrderBookProject
 
-# Build the project
+Build the project
 dotnet build
 
-# Run the program (outputs to Resources/output.csv)
+Run the program (outputs to Resources/output.csv)
 dotnet run --project OrderBookProject
 ✔️ The output file will be written to: OrderBookProject/Resources/output.csv
+
+# 🧪 Uruchamianie testów jednostkowych
+
+Testy znajdują się w projekcie `OrderBookTestProject` i są oparte na bibliotece **NUnit**.
+
+## ✅ Wymagania
+
+Aby uruchomić testy, upewnij się, że:
+
+1. Masz zainstalowane pakiety NuGet:
+
+   - `NUnit`
+   - `NUnit3TestAdapter`
+   - `Microsoft.NET.Test.Sdk`
+   
+2. Projekt testowy (OrderBookTestProject) ma referencję do projektu głównego (OrderBookProject)
